@@ -13,20 +13,40 @@
         <h1 class="title">For You My Love ❤️</h1>
 
         <div class="photo-box">
-            <img src="image/boy.jpeg" class="photo">
-            <img src="image/girl.jpeg" class="photo">
+            <img src="image/boy.jpeg" class="photo" alt="Me">
+            <img src="image/girl.jpeg" class="photo" alt="Meena">
         </div>
 
         <div class="letter-box">
             <h2>My Letter to You 💌</h2>
-            <p id="letter">
-                <!-- Replace this text with your message -->
-                This is the place where your message will come.  
-                I will update it with your custom letter after you give me your content.
-            </p>
+            <p id="letter"></p>
         </div>
 
     </div>
 
+    <script>
+        const text = `I love Meena deeply, and we have been together for two beautiful years.
+Yes, we had many fights and misunderstandings, but every emotion came from love.
+Even when we were angry, our hearts never wanted to lose each other.
+We both are imperfect, learning, and growing step by step together.
+Real love is not about never fighting, it is about choosing each other every day.
+I still choose you, Meena, with all my heart.
+My love for you is unconditional, patient, and true.
+I hope we heal, understand, and hold each other more gently from now on.`;
+
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("letter").innerHTML +=
+                    text[i] === "\n" ? "<br><br>" : text[i];
+                i++;
+                setTimeout(typeWriter, 40); // typing speed
+            }
+        }
+
+        typeWriter();
+    </script>
+
 </body>
 </html>
+
